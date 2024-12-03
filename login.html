@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Use local path to your stylesheet -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1-crypto-js.js"></script> <!-- Include crypto-js for hashing -->
+</head>
+<body>
+    <h2>Login</h2>
+
+    <!-- Flash messages (you can manually show messages using JavaScript) -->
+    <div id="flash-messages"></div>
+
+    <!-- Login Form -->
+    <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p>Don't have an account? <a href="register.html">Register here</a></p>
+
+    <script>
+        // Simulated stored data (In real projects, this data would come from a backend)
+        const storedUsername = "player1";
+        const storedHashedPassword = "5f4dcc3b5aa765d61d8327deb882cf99"; // MD5("password")
+
+        // Handle login form submission
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form from submitting
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Hash the entered password using MD5
+            const hashedPassword = CryptoJS.MD5(password).toString(CryptoJS.enc.Hex);
+
+            // Check if the username and password match the stored values
+            if (username === storedUsername && hashedPassword === storedHashedPassword) {
+                alert("Login successful!");
+                window.location.href = "index.html";
+

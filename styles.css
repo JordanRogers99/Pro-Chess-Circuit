@@ -1,0 +1,47 @@
+/* styles.css */
+
+body {
+    background-color: rgb(48, 22, 13);
+}
+
+.open-text {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 3px;
+    text-align: center;
+    margin: 20px;
+    gap: 10px;
+    justify-content: space-evenly;
+    justify-items: center;
+}
+
+.Logo {
+    border-style: solid;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 37px;
+    background-color: rgb(77, 0, 0);
+}
+
+.intro {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 20px;
+    border-style: solid;
+    border-radius: 15px;
+    font-size: larger;
+    margin-left: 70px;
+    background-color: rgb(77, 0, 0);
+}
+
+.welcome {
+    text-decoration: underline;
+    font-size: 35px;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 3px;
+    margin: 
